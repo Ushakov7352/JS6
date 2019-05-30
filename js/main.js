@@ -19,6 +19,26 @@ const products = [
       title: 'Gamepad',
       price: 75
    },
+   {
+      id: 5,
+      title: 'Notebook',
+      price: 2000
+   },
+   {
+      id: 6,
+      title: 'Mouse',
+      price: 30
+   },
+   {
+      id: 7,
+      title: 'Keyboard',
+      price: 55
+   },
+   {
+      id: 8,
+      title: 'Gamepad',
+      price: 75
+   },
 ];
 
 const renderProduct = (title, price) => {
@@ -32,8 +52,12 @@ const renderProduct = (title, price) => {
 const renderPage = list => {
    const productsList = list.map(item => renderProduct(item.title, item.price));
    document.querySelector('.products').innerHTML =
-      //productsList.replace(/[\s,]/g );
-      productsList.join(''); // Добавил свойство join с пустой строкой
+      productsList.toString().replace(/>,</g, '><'); // это с регулярным выражением
+   //productsList.join(''); // Добавил свойство join с пустой строкой
 };
-
+const noComma = (x) => {
+   if (x.includes(',')) {
+      return x.replace(",", "")
+   }
+}
 renderPage(products);
