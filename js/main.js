@@ -55,9 +55,5 @@ const renderPage = list => {
       productsList.toString().replace(/>,</g, '><'); // это с регулярным выражением
    //productsList.join(''); // Добавил свойство join с пустой строкой
 };
-const noComma = (x) => {
-   if (x.includes(',')) {
-      return x.replace(",", "")
-   }
-}
+
 renderPage(products);
