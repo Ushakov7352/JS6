@@ -31,7 +31,9 @@ const renderProduct = (title, price) => {
 
 const renderPage = list => {
    const productsList = list.map(item => renderProduct(item.title, item.price));
-   document.querySelector('.products').innerHTML = productsList.join(''); // Добавил свойство join с пустой строкой
+   document.querySelector('.products').innerHTML =
+      //productsList.replace(/[\s,]/g );
+      productsList.join(''); // Добавил свойство join с пустой строкой
 };
 
 renderPage(products);
